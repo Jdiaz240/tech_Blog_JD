@@ -6,4 +6,4 @@ router.post("/", withAuth, async (req, res) => {
     // create a router to post comments to created posts
 });
 
-module.exports = router;
+// module.exports = router;

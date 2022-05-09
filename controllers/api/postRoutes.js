@@ -14,4 +14,4 @@ router.delete("/:id", withAuth, async (req, res) => {
     // Delete the post
 });
 
-module.exports = router;
+// module.exports = router;

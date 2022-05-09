@@ -34,10 +34,11 @@ router.get("/post/:id", async (req, res) => {
 
 router.get("/login", (req, res) => {
     // login
+    
 });
 
 router.get("/signup", (req, res) => {
     // signup
 })
 
-module.exports = router;
+// module.exports = router;
