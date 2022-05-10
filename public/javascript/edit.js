@@ -8,15 +8,31 @@ const editFormHandler = async function(event) {
 
   await fetch(`/api/post/${postId}`, {
        // Create the functionality to help create the buttons for your website.
-
+       method: 'POST',
+       body: JSON.stringify({ postId }),
+       headers: {
+         'Content-Type': 'application/json',
+       },
   });
 
   document.location.replace('/dashboard');
 };
 
 const deleteClickHandler = async function() {
-  await     // Create the functionality to help create the buttons for your website.
+      // Create the functionality to help create the buttons for your website.
+  if (event.target.hasAttribute('postId')) {
+    const id = event.target.getAttribute('postId');
 
+    const response = await fetch(`/api/post/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to delete post');
+    }
+  }
 
   document.location.replace('/dashboard');
 };
