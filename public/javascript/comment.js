@@ -12,8 +12,15 @@ const commentFormHandler = async function(event) {
         headers: {
           'Content-Type': 'application/json',
         },
-  });
-  
+      });
+
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to create comment');
+      }
+    }
+}
   document
     .querySelector('#new-comment-form')
     .addEventListener('submit', commentFormHandler);
