@@ -6,9 +6,9 @@ const commentFormHandler = async function(event) {
   
     // Create the functionality to help create the buttons for your website.
     if (postId && body) {
-      const response = await fetch(`/api/projects`, {
+      const response = await fetch(`/api/comment`, {
         method: 'POST',
-        body: JSON.stringify({ postId }),
+        body: JSON.stringify({ body }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -20,7 +20,7 @@ const commentFormHandler = async function(event) {
         alert('Failed to create comment');
       }
     }
-}
+};
   document
     .querySelector('#new-comment-form')
     .addEventListener('submit', commentFormHandler);

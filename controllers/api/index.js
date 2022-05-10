@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const userRoutes = require("./userRoutes");
-// const postRoutes = require("");
-// const commentRoutes = require("");
+const postRoutes = require("./postRoutes");
+const commentRoutes = require("./commentRoutes");
 // Finish the required pathing for these variables
 // const userRoutes = ;
 // const postRoutes = ;
@@ -9,7 +9,8 @@ const userRoutes = require("./userRoutes");
 
 router.use("/user", userRoutes);
 // write the rest of the router.use routes
-// router.use("/", postRoutes);
-// router.use("/", commentRoutes);
+router.use("/post", postRoutes);
+router.use("/comment", commentRoutes);
+
 
 module.exports = router;

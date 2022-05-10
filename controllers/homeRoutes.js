@@ -34,11 +34,21 @@ router.get("/post/:id", async (req, res) => {
 
 router.get("/login", (req, res) => {
     // login
-    
+    if (req.session.logged_in) {
+      res.redirect('/dashboard');
+      return;
+    }
+  
+    res.render('login');
 });
 
 router.get("/signup", (req, res) => {
     // signup
+    if (res.session.sign_up) {
+      res.redirect('signup');
+      return;
+    }
+    res.render('signup');
 })
 
 // module.exports = router;
