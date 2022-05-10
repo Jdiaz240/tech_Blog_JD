@@ -9,7 +9,7 @@ const editFormHandler = async function(event) {
   await fetch(`/api/post/${postId}`, {
        // Create the functionality to help create the buttons for your website.
        method: 'POST',
-       body: JSON.stringify({ postId }),
+       body: JSON.stringify({ title, body }),
        headers: {
          'Content-Type': 'application/json',
        },
@@ -20,8 +20,6 @@ const editFormHandler = async function(event) {
 
 const deleteClickHandler = async function() {
       // Create the functionality to help create the buttons for your website.
-  if (event.target.hasAttribute('postId')) {
-    const id = event.target.getAttribute('postId');
 
     const response = await fetch(`/api/post/${id}`, {
       method: 'DELETE',
@@ -32,9 +30,6 @@ const deleteClickHandler = async function() {
     } else {
       alert('Failed to delete post');
     }
-  }
-
-  document.location.replace('/dashboard');
 };
 
 document

@@ -4,7 +4,10 @@ const { User } = require("../../models");
 router.post("/", async (req, res) => {
     // Creating a new instance of user
    try {
-       const userData = await User.create(req.body);
+       const userData = await User.create({
+        username: req.body.username,
+        password: req.body.password, 
+        }) ;
        res.status(200).json(userData);
    } catch (err) {
        res.status(400).json(err);

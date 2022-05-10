@@ -7,7 +7,10 @@ const loginFormHandler = async function(event) {
     const response = await fetch('/api/user/login', {
           // Create the functionality to help create the buttons for your website.
           method: 'POST',
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ 
+            username: usernameEl.value, 
+            password: passwordEl.value,
+           }),
           headers: { 'Content-Type': 'application/json' },
         });
   
